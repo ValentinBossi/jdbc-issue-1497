@@ -1,5 +1,7 @@
 package com.reproduce.issue1497;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
@@ -25,6 +27,7 @@ class Issue1497ApplicationTests {
 	@Test
 	void findUserByName() {
 		Person user = userRepository.findByName("test");
+		assertEquals("test", user.getName());
 	}
 
 }
